@@ -1,0 +1,126 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    background: linear-gradient(135deg, #355e80 0%, #17305f 100%);
+    min-height: 100vh;
+    padding: 20px;
+}
+
+.container {
+    max-width: 420px;
+    margin: 0 auto;
+    background: rgb(255, 255, 255);
+    border-radius: 25px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+    overflow: hidden;
+}
+
+.header {
+    background: linear-gradient(135deg, #6f66ea 0%, #4ba279 100%);
+    color: white;
+    padding: 30px 20px;
+    text-align: center;
+}
+
+.month-year {
+    font-size: 28px;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+.nav-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 80px;
+    align-items: center;
+    margin-top: 15px;
+}
+
+.nav-btn {
+    background: rgba(0, 0, 0, 0.2);
+    border: none;
+    color: rgb(253, 253, 253);
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    font-size: 28px;
+    cursor: pointer;
+    transition: all 0.3s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.nav-btn:active {
+    transform: scale(0.95);
+    background: rgba(255,255,255,0.3);
+}
+
+.calendar {
+    padding: 20px;
+}
+
+.weekdays {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 5px;
+    margin-bottom: 10px;
+}
+
+.weekday {
+    text-align: center;
+    font-weight: 600;
+    color: #0043be;
+    font-size: 14px;
+    padding: 10px 0;
+}
+
+.days {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 5px;
+}
+
+.day {
+    aspect-ratio: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 12px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: all 0.3s;
+    position: relative;
+    font-weight: 500;
+}
+
+.day:not(.empty):not(.other-month):hover {
+    background: #ffffff;
+    transform: scale(1.05);
+}
+
+.day.empty {
+    cursor: default;
+}
+
+.day.other-month {
+    color: #c5c5c5;
+}
+
+.day.today {
+    background: linear-gradient(135deg, #667eea 0%, #18298f 100%);
+    color: rgb(209, 237, 255);
+    font-weight: 700;
+    box-shadow: 0 4px 15px rgba(102,126,234,0.4);
+}
+
+.day.selected {
+    background: #1570d8;
+    color: rgb(180, 234, 255);
+    font-weight: 700;
+}
